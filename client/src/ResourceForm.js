@@ -26,18 +26,18 @@ function ResourceForm() {
 
     return (
         <div>
-            <h1>Add New Resource</h1>
+            <h3>Add New Resource</h3>
             <form onSubmit={handleSubmit} >
-                <label for="url">Url</label>
+                <label htmlFor="url">Url</label>
                 <input id="url" type="text"></input>
 
-                <label for="title">Title</label>
+                <label htmlFor="title">Title</label>
                 <input id="title" type="text"></input>
 
-                <label for="description">Description</label>
+                <label htmlFor="description">Description</label>
                 <input id="description" type="textarea"></input>
 
-                <label for="tags">Tags</label>
+                <label htmlFor="tags">Tags</label>
                 <input id="tags" type="text"></input>
 
                 <input type="submit" value="Add"></input>
