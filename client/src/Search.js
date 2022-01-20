@@ -1,6 +1,9 @@
-import React from "react"
+import {React, useState} from "react"
+import Typeahead from "./Typeahead"
 
 function Search({onSearch}) {
+
+    const [searchValue, setSearchValue] = useState('');
 
     function handleSearch(e) {
         e.preventDefault();
@@ -14,7 +17,8 @@ function Search({onSearch}) {
         
         <form onSubmit={handleSearch}>
             <div className="input-group">
-                <input id="query" type="search" placeholder="Search..." className="form-control" />
+                {/* <input id="query" type="search" placeholder="Search..." className="form-control" /> */}
+                <Typeahead/>
                 <input id="search" type="submit" className="btn btn-primary" />
             </div>
         </form>

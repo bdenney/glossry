@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.typeaheadResults {
+  position:absolute;
+  top:40px;
+  width:88%;
+  display: none;
+  
+}
+
+input:focus + .typeaheadResults {
+  display:block
+}
