@@ -26,21 +26,21 @@ function ResourceForm() {
 
     return (
         <div>
-            <h3>Add New Resource</h3>
-            <form onSubmit={handleSubmit} >
-                <label htmlFor="url">Url</label>
-                <input id="url" type="text"></input>
+            <button data-bs-target="#new_form" data-bs-toggle="collapse" className="btn-secondary">Add New Resource</button>
+            <form onSubmit={handleSubmit} id="new_form" className="collapse" >
+                <label htmlFor="url" className="form-label">Url</label>
+                <input className="form-control" id="url" type="text"></input>
 
-                <label htmlFor="title">Title</label>
-                <input id="title" type="text"></input>
+                <label htmlFor="title" className="form-label">Title</label>
+                <input className="form-control" id="title" type="text"></input>
 
-                <label htmlFor="description">Description</label>
-                <input id="description" type="textarea"></input>
+                <label htmlFor="description" className="form-label">Description</label>
+                <input className="form-control" id="description" type="textarea"></input>
 
-                <label htmlFor="tags">Tags</label>
-                <input id="tags" type="text"></input>
+                <label htmlFor="tags" className="form-label">Tags</label>
+                <input className="form-control" id="tags" type="text"></input>
 
-                <input type="submit" value="Add"></input>
+                <input className="btn  btn-primary" type="submit" value="Add"></input>
             </form>
         </div>
     );

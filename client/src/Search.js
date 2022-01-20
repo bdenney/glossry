@@ -11,12 +11,14 @@ function Search({onSearch}) {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSearch}>
-                <input id="query" type="text"/>
-                <input id="search" type="submit"/>
-            </form>
-        </div>
+        
+        <form onSubmit={handleSearch}>
+            <div className="input-group mb-3">
+                <input className="form-control" id="query" type="text"/>
+                <input className="btn btn-primary" id="search" type="submit"/>
+            </div>
+        </form>
+        
     );
 }
 
