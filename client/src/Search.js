@@ -13,9 +13,9 @@ function Search({onSearch}) {
     return (
         
         <form onSubmit={handleSearch}>
-            <div className="input-group mb-3">
-                <input className="form-control" id="query" type="text"/>
-                <input className="btn btn-primary" id="search" type="submit"/>
+            <div className="input-group mt-2">
+                <input id="query" type="search" placeholder="Search..." className="form-control" />
+                <input id="search" type="submit" className="btn btn-primary" />
             </div>
         </form>
         
