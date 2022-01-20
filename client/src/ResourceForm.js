@@ -26,7 +26,7 @@ function ResourceForm() {
 
     return (
         <div>
-            <button data-bs-target="#new_form" data-bs-toggle="collapse" className="btn-secondary">Add New Resource</button>
+            <button type="button" data-bs-target="#new_form" data-bs-toggle="collapse" className="btn-secondary">Add New Resource</button>
             <form onSubmit={handleSubmit} id="new_form" className="collapse" >
                 <label htmlFor="url" className="form-label">Url</label>
                 <input className="form-control" id="url" type="text"></input>

@@ -16,10 +16,10 @@ function App() {
       <header className="py-3 mb-3 border-bottom">
         <div className="container d-grid gap-3">
           <div className="row">
-            <div className="col">
-              <h1>Glossry</h1>
+            <div className="col ">
+              <img src={require("./images/logo.png")} />
             </div>
-            <div className="col">
+            <div className="col align-self-center" >
               <Search onSearch={onSearchResultsReceived} />
             </div>
           </div>

@@ -13,7 +13,7 @@ function Search({onSearch}) {
     return (
         
         <form onSubmit={handleSearch}>
-            <div className="input-group mt-2">
+            <div className="input-group">
                 <input id="query" type="search" placeholder="Search..." className="form-control" />
                 <input id="search" type="submit" className="btn btn-primary" />
             </div>
