@@ -6,7 +6,32 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-Tag.create(name: 'js')
-Tag.create(name: 'ruby')
-Tag.create(name: 'cheatsheet')
-Tag.create(name: 'tip')
+Resource.create(link: "https://google.com",
+    title:"Google",
+    description: "Search for it!",
+    tags: [
+        Tag.new({name:"search"}),
+        Tag.new({name:"reference"}),
+        Tag.new({name:"reasource"})
+    ]
+)
+
+Resource.create(link: "https://xkcd.com",
+    title:"xkcd",
+    description: "Good for a laugh",
+    tags: [
+        Tag.new({name:"fun"}),
+        Tag.new({name:"cs"}),
+        Tag.new({name:"science"})
+    ]
+)
+
+Resource.create(link: "https://flatironschool.com",
+    title:"Flatiron School",
+    description: "Learn things!",
+    tags: [
+        Tag.new({name:"learn"}),
+        Tag.new({name:"school"}),
+        Tag.new({name:"coding"})
+    ]
+)

@@ -1,10 +1,11 @@
 import {React, useState} from "react"
 
-function Typeahead() {
+function Typeahead({searchValue, setNewSearchValue}) {
     const [results, setResults] = useState([]);
 
     function handleEntry(e) {
         let text = e.target.value
+        setNewSearchValue(text)
 
         if (!text) {
             setResults([]);

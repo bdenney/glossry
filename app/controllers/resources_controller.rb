@@ -6,20 +6,30 @@ class ResourcesController < ApplicationController
   end
 
   def create
-    Resource.create(link: params[:url], title: params[:title], description: params[:description], tags: params[:tags])
+    tags = []
+    if (params[:tags] != nil && params[:tags].length > 0)
+      tagStrings = params[:tags].split(',')
+
+      tagStrings.each do |tagStr|
+        tags << Tag.new({name: tagStr})
+      end
+
+    end
+    
+    Resource.create(link: params[:url], title: params[:title], description: params[:description], tags: tags)
+
     render json: [], status: :created
   end
 
   def search
     term = params[:term]
-    # byebug
-    render json: Resource.where("title like ? OR description like ? or tags like ?", "%#{term}%", "%#{term}%", "%#{term}%")
+    render json: Resource.joins(:tags).where(tags: Tag.where("name like ?", "%#{term}%"))
   end
 
   private
 
   def create_params
-    # params.permit(:url, :title, :description, :tags)
+    
   end
 
 end

@@ -8,7 +8,7 @@ function Search({onSearch}) {
     function handleSearch(e) {
         e.preventDefault();
 
-        fetch(`/resources/search?term=${e.target.query.value}`)
+        fetch(`/resources/search?term=${searchValue}`)
         .then(response => response.json())
         .then(json => onSearch(json));
     }
@@ -18,7 +18,7 @@ function Search({onSearch}) {
         <form onSubmit={handleSearch}>
             <div className="input-group">
                 {/* <input id="query" type="search" placeholder="Search..." className="form-control" /> */}
-                <Typeahead/>
+                <Typeahead searchValue={searchValue} setNewSearchValue={setSearchValue}/>
                 <input id="search" type="submit" className="btn btn-primary" />
             </div>
         </form>

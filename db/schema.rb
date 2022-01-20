@@ -10,19 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_20_174420) do
+ActiveRecord::Schema.define(version: 2022_01_20_200846) do
 
   create_table "resources", force: :cascade do |t|
     t.string "link"
     t.string "title"
     t.string "description"
-    t.string "tags"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tag_associations", force: :cascade do |t|
+    t.integer "tag_id", null: false
+    t.integer "resource_id", null: false
+    t.index ["resource_id"], name: "index_tag_associations_on_resource_id"
+    t.index ["tag_id"], name: "index_tag_associations_on_tag_id"
   end
 
   create_table "tags", force: :cascade do |t|
     t.string "name"
   end
 
+  add_foreign_key "tag_associations", "resources"
+  add_foreign_key "tag_associations", "tags"
 end
