@@ -26,6 +26,8 @@ class ResourcesController < ApplicationController
     matching_tags = Resource.joins(:tags).where(tags: Tag.where("name like ?", "%#{term}%")).distinct
     matching_resources = Resource.where("title like ? or description like ?", "%#{term}%", "%#{term}%")
 
+    pp matching_tags
+    pp matching_resources
 
     render json: (matching_tags + matching_resources).uniq
   end

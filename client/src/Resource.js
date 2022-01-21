@@ -1,4 +1,5 @@
 import React from "react"
+import TagBar from "./TagBar";
 
 function Resource({resource}) { 
     let typeIcon = ''
@@ -20,8 +21,9 @@ function Resource({resource}) {
                 </div>
                 <p className="card-text">{resource.description}</p>
                 <div className="d-flex align-items-center">
-                    <img src={require( `${typeIcon}` )} style={{height: 25, width: 25}} className="mh-100"></img>
+                    <img src={require( `${typeIcon}` )} style={{height: 25, width: 25}}></img>
                     <a href={resource.link} className="card-link mx-2">{resource.link}</a>
+                    <TagBar tags={resource.tags}/>
                 </div>
             </div>
         </div>
