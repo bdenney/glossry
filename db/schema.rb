@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2022_01_21_174132) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "resources", force: :cascade do |t|
     t.string "link"
     t.string "title"
@@ -22,8 +25,8 @@ ActiveRecord::Schema.define(version: 2022_01_21_174132) do
   end
 
   create_table "tag_associations", force: :cascade do |t|
-    t.integer "tag_id", null: false
-    t.integer "resource_id", null: false
+    t.bigint "tag_id", null: false
+    t.bigint "resource_id", null: false
     t.index ["resource_id"], name: "index_tag_associations_on_resource_id"
     t.index ["tag_id"], name: "index_tag_associations_on_tag_id"
   end
