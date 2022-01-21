@@ -29,7 +29,6 @@ function Search({onSearch}) {
         .then(response => response.json())
         .then(json => onSearch(json));
 
-        setSearchValue('');
         document.activeElement.blur();
     }
 

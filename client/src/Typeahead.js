@@ -96,13 +96,9 @@ function Typeahead({searchValue, setNewSearchValue}) {
             <input id="searchField" type="search" onChange={handleEntry} className="form-control" value={searchValue}/>
             <ul id="typeaheadResults" className="typeaheadResults dropdown-menu">
                 {
-                    // <ul id="typeaheadResultList"  className="list-group typeaheadlist">
-                    // {
-                        results.map(tag => {
-                            return <li key={tag.id} className="dropdown-item">{tag.name}</li>
-                        })
-                    // }
-                    // </ul>
+                    results.map(tag => {
+                        return <li key={tag.id} className="dropdown-item">{tag.name}</li>
+                    })
                 }
             </ul>
         </>
