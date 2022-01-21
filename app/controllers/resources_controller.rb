@@ -23,7 +23,11 @@ class ResourcesController < ApplicationController
 
   def search
     term = params[:term]
-    render json: Resource.joins(:tags).where(tags: Tag.where("name like ?", "%#{term}%")).distinct
+    matching_tags = Resource.joins(:tags).where(tags: Tag.where("name like ?", "%#{term}%")).distinct
+    matching_resources = Resource.where("title like ? or description like ?", "%#{term}%", "%#{term}%")
+
+
+    render json: (matching_tags + matching_resources).uniq
   end
 
   private
