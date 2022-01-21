@@ -16,7 +16,7 @@ class ResourcesController < ApplicationController
 
     end
     
-    Resource.create(link: params[:url], title: params[:title], description: params[:description], tags: tags)
+    Resource.create(link: params[:url], title: params[:title], description: params[:description], tags: tags, type: generate_type(params[:url]))
 
     render json: [], status: :created
   end
@@ -32,8 +32,14 @@ class ResourcesController < ApplicationController
 
   private
 
-  def create_params
-    
+  def generate_type(link)
+    type = Resource::TYPE[:web]
+
+    if (link.contains "learning.flatironschool.com")
+      type = Resource::TYPE[:flatiron]
+    end
+
+    type
   end
 
 end

@@ -12,8 +12,9 @@ Resource.create(link: "https://google.com",
     tags: [
         Tag.new({name:"search"}),
         Tag.new({name:"reference"}),
-        Tag.new({name:"reasource"})
-    ]
+        Tag.new({name:"resource"})
+    ],
+    type: Resource::TYPE[:web]
 )
 
 Resource.create(link: "https://xkcd.com",
@@ -23,7 +24,8 @@ Resource.create(link: "https://xkcd.com",
         Tag.new({name:"fun"}),
         Tag.new({name:"cs"}),
         Tag.new({name:"science"})
-    ]
+    ],
+    type: Resource::TYPE[:web]
 )
 
 Resource.create(link: "https://flatironschool.com",
@@ -33,5 +35,19 @@ Resource.create(link: "https://flatironschool.com",
         Tag.new({name:"learn"}),
         Tag.new({name:"school"}),
         Tag.new({name:"coding"})
-    ]
+    ],
+    type: Resource::TYPE[:web]
 )
+
+Resource.create(link: "https://learning.flatironschool.com/courses/4985/assignments/163558?module_item_id=352049",
+    title:"Flatagram",
+    description: "Phase 1 practice that mimics instagram.",
+    tags: [
+        Tag.new({name:"learn"}),
+        Tag.new({name:"school"}),
+        Tag.new({name:"coding"}),
+        Tag.new({name:"practice"}),
+        Tag.new({name:"phase 1"})
+    ],
+    type: Resource::TYPE[:flatiron]
+);

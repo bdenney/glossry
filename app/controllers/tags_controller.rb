@@ -3,6 +3,6 @@ class TagsController < ApplicationController
 
     def search
         term = params[:term]
-        render json: Tag.where("name like ?", "%#{term}%")
+        render json: Tag.where("name like ?", "%#{term}%").distinct
     end 
 end

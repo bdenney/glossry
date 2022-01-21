@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_20_200846) do
+ActiveRecord::Schema.define(version: 2022_01_21_174132) do
 
   create_table "resources", force: :cascade do |t|
     t.string "link"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2022_01_20_200846) do
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "type"
   end
 
   create_table "tag_associations", force: :cascade do |t|
