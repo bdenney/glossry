@@ -28,6 +28,9 @@ function Search({onSearch}) {
         fetch(`/resources/search?term=${searchValue}`)
         .then(response => response.json())
         .then(json => onSearch(json));
+
+        setSearchValue('');
+        document.activeElement.blur();
     }
 
     return (
