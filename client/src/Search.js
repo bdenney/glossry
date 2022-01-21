@@ -1,9 +1,26 @@
-import {React, useState} from "react"
+import {React, useEffect, useState} from "react"
 import Typeahead from "./Typeahead"
 
 function Search({onSearch}) {
-
     const [searchValue, setSearchValue] = useState('');
+
+    useEffect(() => {
+        document.addEventListener('keydown', handleKeypress);
+
+        return function cleanup() {
+            document.removeEventListener('keydown', handleKeypress);
+        }
+    }, [searchValue]);
+
+    function handleKeypress(e) {
+        let key = e.keyCode;
+
+        switch(key) {
+            case 13: // enter
+                handleSearch(e);
+                break;
+        }
+    }
 
     function handleSearch(e) {
         e.preventDefault();
@@ -17,7 +34,6 @@ function Search({onSearch}) {
         
         <form onSubmit={handleSearch}>
             <div className="input-group">
-                {/* <input id="query" type="search" placeholder="Search..." className="form-control" /> */}
                 <Typeahead searchValue={searchValue} setNewSearchValue={setSearchValue}/>
                 <input id="search" type="submit" className="btn btn-primary" />
             </div>
